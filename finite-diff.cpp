@@ -4,7 +4,7 @@ using namespace std;
 double timeSteps = 5000;
 double dx = 0.02;
 double dt = 0.1;
-double pi = atan(1) * 4.0;
+double pi = M_PI;
 double alpha = 20;
 double x0 = -0.5;
 double p0 = 50;
