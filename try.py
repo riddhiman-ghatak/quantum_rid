@@ -5,15 +5,15 @@ import copy
 import math
 
 def wavefunc(po, x):
-    return (1.0/np.pi)**0.25*(np.exp(-1j*0))*np.exp(-(0.5*(x+0.5)**2))
+   return (1.0/np.pi)**0.25*(np.exp(-1j*0))*np.exp(-(0.5*(x+0.5)**2))
 
 xmin = -5
-po = 50
+po = 0
+dx = 30/1024
 dt = 0.2
 stepst = 500
 stepsx = 1024
-dx = (30/1024)
-m = 14500
+m = 1
 L = stepsx*dx
 dk = 2*math.pi/L
 kgrid = []
@@ -29,7 +29,7 @@ for i in range(stepsx + 1):
     xgrid.append(xmin + i*dx)
 
 def potential(x):
-    return 8*(1-np.exp(-np.sqrt(1.0/(2.0*8.0))*x**2))
+     return 8*(1-np.exp(-np.sqrt(1/(2*8))*(x)))**2
     
 vgrid = []
 for i in range(stepsx + 1):
@@ -56,3 +56,4 @@ for i in range(0, stepst + 1, 100):
     plt.plot(xgrid, [abs(p)**2 for p in psi[i]], label=str(i))
     plt.title(f"Time Step {i}")
     plt.show()
+

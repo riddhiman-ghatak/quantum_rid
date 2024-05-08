@@ -1,15 +1,11 @@
 import numpy as np
 
 def f(x, y):
-    """
-    Defines the differential equation y'(x) = x^2 + y^2
-    """
+   
     return -2*y + x +4
 
 def runge_kutta_4th_order(x0, y0, h, target_x):
-    """
-    Implementation of the 4th order Runge-Kutta method
-    """
+    
     steps = int((target_x - x0) / h)
     x = x0
     y = y0
@@ -20,6 +16,30 @@ def runge_kutta_4th_order(x0, y0, h, target_x):
         k4 = h * f(x + h, y + k3)
         
         y += (k1 + 2 * k2 + 2 * k3 + k4) / 6
+        x += h
+    
+    return y
+def euler_method(x0, y0, h, target_x):
+    
+    steps = int((target_x - x0) / h)
+    x = x0
+    y = y0
+    for _ in range(steps):
+        y += h * f(x, y)
+        x += h
+    
+    return y
+
+def heuns_method(x0, y0, h, target_x):
+    
+    steps = int((target_x - x0) / h)
+    x = x0
+    y = y0
+    for _ in range(steps):
+        k1 = h * f(x, y)
+        k2 = h * f(x + h, y + k1)
+        
+        y += 0.5 * (k1 + k2)
         x += h
     
     return y

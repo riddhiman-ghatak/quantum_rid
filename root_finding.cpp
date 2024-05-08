@@ -12,8 +12,8 @@ double g(double x)
 }
 double diff(double x)
 {
-    double h = 0.000001;
-    double ans = (f(x + h) - 2 * f(x) + f(x - h)) / (h * h);
+    // double h = 0.000001;
+    double ans = (exp(x) - 1);
     return ans;
 }
 double newton(double x)

@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// sir I am Riddhiman.I have submitted already 2 days ago.
-// But my file name was not in format , so I am submitting again
-
 double f(double x)
 {
     double ans = 2000 * log(140000 / (140000 - 2100 * x)) - 9.8 * x;
